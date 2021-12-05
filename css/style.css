@@ -5,6 +5,7 @@
     --primario: #784D3C;
     --blanco: #FFF;
     --negro: #000;
+    --gris: #E1E1E1;
 }
 
 html{
@@ -23,8 +24,9 @@ body{
 }
 
 .contenedor{
-    max-width: 120rem;
-    width: 90%;
+    max-width: 120rem; /*usará 1200px mientras haya ese espacio disponible, de lo contrario usa el 90% del width de abajo */
+    width: 90%; /*para que el contenido no quede pegado a las orillas en celulares (especie de padding)*/
+    /* min-width: (90%, 120rem); es lo mismo de arriba solo que en un línea */
     margin: 0 auto;
 }
 
@@ -34,6 +36,7 @@ a{
 
 h1, h2, h3, h4{
     font-family: var(--fuenteHeading);
+    line-height: 1.2;
 }
 
 h1{
@@ -52,3 +55,142 @@ h4{
     font-size: 2.8rem;
 }
 
+img{
+    max-width: 100%;
+}
+
+.no-margin{
+    margin:0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+.header{
+    background-image: url(../img/banner.jpg);
+    height: 60rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; /*centrar horizontal y vertical */
+}
+
+.barra{
+    padding-top: 4rem;
+}
+
+.logo{
+    color: var(--blanco);
+}
+
+.logo__nombre{
+    font-weight: 400;
+}
+
+.logo__bold{
+    font-weight: 700;
+}
+
+.navegacion__enlace{
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color:var(--blanco)
+}
+
+.header__texto{
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 5rem;
+}
+
+.entrada{
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+
+.boton{
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.boton--primario{
+    background-color: var(--negro);
+}
+
+.cursos{
+    list-style: none;
+}
+
+.widget-curso{
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+
+.widget-curso__label{
+    font-family: var(--fuenteHeading);
+    font-weight: 700; /*o bold*/
+}
+
+.widget-curso__info{
+    font-weight: 400; /*o normal*/
+}
+
+.widget-curso__label,
+.widget-curso__info{
+    font-size: 2rem;
+}
+
+.boton--secundario{
+    background-color: var(--primario);
+}
+
+.footer{
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
+}
+
+@media (min-width: 768px){
+    .barra{
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /*alinear verticalmente al centro*/
+    }
+    .navegacion{
+        display: flex;
+        gap: 2rem;
+    }
+    .header__texto{
+        margin-top: 15rem;
+    }
+    .contenido-principal{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+    .boton{
+        display: inline-block;
+    }
+}
